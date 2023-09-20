@@ -1,0 +1,19 @@
+<h1>一覧表示ページ</h1>
+<div class="contents">
+  <% @books.each do |book| %>
+    <div class='book-img-content'>
+      <%= image_tag book.book_image, class: "book-img" %>
+    </div>
+    <div class='book-info'>
+      <div class='book-title'>
+        <%= book.title %>
+      </div>
+      <div class='book-category'>
+        <%= book.category.name %>
+      </div>
+      <div class='book-author'>
+        <%= book.author %>
+      </div>
+    </div>
+  <% end %>
+</div>
