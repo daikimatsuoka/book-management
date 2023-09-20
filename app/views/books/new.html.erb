@@ -20,7 +20,7 @@
     </div>
     <div class="catgory">
       <p>カテゴリー</p>
-    </div>
+       <%= f.collection_select(:catgory_id, Category.all, :id, :name, {}) %>
     <div class="book-publisher">
       <p>あらすじ・概要</p>
       <%= f.text_area :synopsis_explanation %>
