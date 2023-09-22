@@ -19,7 +19,7 @@
     </div>
   </div>
   <% if user_signed_in? && @book.user_id == current_user.id %>
-    <%= link_to '編集する' %>
+    <%= link_to '編集する', edit_book_path(@book.id), class:"edit-btn" %>
     <%= link_to '削除する' %>
   <% end %>
 </div>

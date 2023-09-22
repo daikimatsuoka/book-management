@@ -1,0 +1,30 @@
+<div class="books-main">
+  <h1>編集ページ</h1>
+  <%= form_with model: @book, local: true do |f| %>
+    <div class="click-upload">
+      <p>サンプル画像</p>
+      <p>クリックしてファイルをアップロード</p>
+      <%= f.file_field :book_image %>
+    </div>
+    <div class="book-title">
+      <p>タイトル</p>
+      <%= f.text_field :title %>
+    </div>
+    <div class="book-author">
+      <p>著者</p>
+      <%= f.text_field :author %>
+    </div>
+    <div class="book-publisher">
+      <p>出版社</p>
+      <%= f.text_field :publisher %>
+    </div>
+    <div class="category">
+      <p>カテゴリー</p>
+       <%= f.collection_select(:category_id, Category.all, :id, :name, {}) %>
+    <div class="book-publisher">
+      <p>あらすじ・概要</p>
+      <%= f.text_area :synopsis_explanation %>
+    </div>
+    <%= f.submit "投稿" %>
+  <% end %>
+</div>
