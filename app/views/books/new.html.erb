@@ -18,9 +18,9 @@
       <p>出版社</p>
       <%= f.text_field :publisher %>
     </div>
-    <div class="catgory">
+    <div class="category">
       <p>カテゴリー</p>
-       <%= f.collection_select(:catgory_id, Category.all, :id, :name, {}) %>
+       <%= f.collection_select(:category_id, Category.all, :id, :name, {}) %>
     <div class="book-publisher">
       <p>あらすじ・概要</p>
       <%= f.text_area :synopsis_explanation %>

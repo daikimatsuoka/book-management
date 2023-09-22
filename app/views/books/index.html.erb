@@ -1,5 +1,6 @@
 <h1>一覧表示ページ</h1>
 <div class="contents">
+  <h2>・おすすめ書籍一覧</h2>
   <% @books.each do |book| %>
     <div class='book-img-content'>
       <%= image_tag book.book_image, class: "book-img" %>
@@ -16,4 +17,5 @@
       </div>
     </div>
   <% end %>
+  <%= link_to "投稿する", new_book_path, class:"post" %>
 </div>
