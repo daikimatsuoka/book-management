@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  before_action :set_book, only: [:show, :edit]
 
   def index
     @books = Book.all
@@ -17,12 +18,10 @@ class BooksController < ApplicationController
     end
   end
 
-  def show
-    @book = Book.find(params[:id])
+  def show   
   end
 
   def edit
-    @book = Book.find(params[:id])
   end
 
   def update
@@ -37,6 +36,10 @@ class BooksController < ApplicationController
   private
   def book_params
     params.require(:book).permit(:title ,:author ,:publisher ,:category_id, :synopsis_explanation, :book_image).merge(user_id: current_user.id)
+  end
+
+  def set_book
+    @book = Book.find(params[:id])
   end
 
 end
