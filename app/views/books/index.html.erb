@@ -3,7 +3,9 @@
   <h2>・おすすめ書籍一覧</h2>
   <% @books.each do |book| %>
     <div class='book-img-content'>
-      <%= image_tag book.book_image, class: "book-img" %>
+      <%= link_to book_path(book.id) do %>
+        <%= image_tag book.book_image, class: "book-img" %>
+      <% end %>
     </div>
     <div class='book-info'>
       <div class='book-title'>
