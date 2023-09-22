@@ -1,0 +1,25 @@
+<h1>詳細表示ページ</h1>
+<div class="show-contents">
+  <%= image_tag @book.book_image, class: "show-book-img" %>
+  <div class='show-book-info'>
+    <div class='show-book-title'>
+      <%= @book.title %>
+    </div>
+    <div class='show-book-category'>
+      <%= @book.category.name %>
+    </div>
+    <div class='show-book-author'>
+      <%= @book.author %>
+    </div>
+    <div class='show-book-publisher'>
+      <%= @book.author %>
+    </div>
+    <div class='show-book-explanation'>
+      <%= @book.synopsis_explanation %>
+    </div>
+  </div>
+  <% if user_signed_in? && @book.user_id == current_user.id %>
+    <%= link_to '編集する' %>
+    <%= link_to '削除する' %>
+  <% end %>
+</div>
