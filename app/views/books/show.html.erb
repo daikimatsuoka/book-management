@@ -22,4 +22,25 @@
     <%= link_to '編集する', edit_book_path(@book.id), class: "edit-btn" %>
     <%= link_to '削除する', book_path(@book.id), method: :delete, class: "delete-btn" %>
   <% end %>
+  <div class="container">
+    <h2 class="comment">コメント<h2>
+    <% if user_signed_in? %>
+      <%= form_with(model: [@book, @comment], local: true) do |f| %>
+        <%= f.text_area :comment, placeholder: "コメントする", rows: "2" %>
+        <%= f.submit "送信" %>
+      <% end %>
+      <% else%>
+        <strong><p>※ コメントの投稿にはログインが必要です </p></strong>
+    <% end %>
+  </div>
+  <div class="comments">
+    <% @comments.each do |comment| %>
+      <div class="name">
+        <%= comment.user.nickname %>
+      </div>
+      <p class="comment-text">
+        <%= comment.comment %>
+      </p>
+    <% end %>
+  </div>
 </div>
