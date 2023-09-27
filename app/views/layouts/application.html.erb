@@ -10,22 +10,29 @@
   </head>
 
   <body>
-  <header>
-    <div class ="header-bar">
-      <h1 class="title"><a href="/">Book Management</a></h1>
-      <% if user_signed_in? %>
-        <div class="user-login">
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-          <%= link_to current_user.nickname, root_path, class: "post" %>
-        </div>
-      <% else %>
-        <div class="user-logout">
-          <%= link_to "ログイン", new_user_session_path, class: "post" %>
-          <%= link_to "新規登録", new_user_registration_path, class: "post" %>
-        </div>
-      <% end %>
-    </div>
-  </header>
-    <%= yield %>
+  <div class="container">
+    <header>
+      <div class ="header-bar">
+        <h1 class="title"><a href="/">Book Management</a></h1>
+        <% if user_signed_in? %>
+          <div class="login">
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "left-btn"%>
+            <%= link_to current_user.nickname, root_path, class: "right-btn" %>
+          </div>
+        <% else %>
+          <div class="logout">
+            <%= link_to "ログイン", new_user_session_path, class: "left-btn" %>
+            <%= link_to "新規登録", new_user_registration_path, class: "right-btn" %>
+          </div>
+        <% end %>
+      </div>
+    </header>
+      <%= yield %>
+    <footer>
+      <div class ="footer-bar">
+        <h1 class="foot-title"><a href="/">Copyright © 2023</a></h1>
+      </div>
+    </footer>
+  </div>
   </body>
 </html>

@@ -1,0 +1,56 @@
+body{
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header-bar{
+  background-color:#194d2f;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title{
+ font-size: 20px;
+ font-family: "Book Antiqua";
+ padding-left: 40px;
+}
+.left-btn{
+  padding-right: 10px;
+}
+
+.right-btn{
+  padding-right: 40px;
+}
+
+.wrapper{
+  min-height: 100vh;
+  position: relative;
+}
+
+footer{
+  margin-top: auto;
+}
+
+.footer-bar{
+  background-color: black;
+  height: 80px;
+}
+
+.foot-title{
+  font-size: 15px;
+  text-align: center;
+  padding-top: 30px;
+  font-family: Arial;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
