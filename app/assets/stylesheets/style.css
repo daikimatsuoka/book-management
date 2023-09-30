@@ -21,6 +21,7 @@ body{
  font-family: "Book Antiqua";
  padding-left: 40px;
 }
+
 .left-btn{
   padding-right: 10px;
 }
@@ -50,7 +51,72 @@ footer{
   font-family: Arial;
 }
 
-a{
+header a{
   text-decoration: none;
   color: white;
 }
+
+footer a{
+  text-decoration: none;
+  color: white;
+}
+
+/* ## userモデル */
+
+.user-container{
+  display: flex;
+  justify-content: center;
+  background-color: #f2f2f2;
+}
+
+.login-flash-message{
+  color: red;
+}
+
+.new_user {
+  background-color: seashell;
+  max-width: 360px; /* フォームの最大幅を設定 */
+  width: 100%; /* 幅を100%に設定して親要素に合わせる */
+  margin: 100px auto; /* 上下のマージンを調整してセンタリング */
+  padding: 20px; /* パディングを調整 */
+  box-sizing: border-box;
+  text-align: center; /* テキストを中央寄せ */
+}
+
+.input-form {
+  background-color: #f2f2f2;
+  border: 0;
+  margin: 15px auto; /* 上下のマージンを調整して中央寄せ */
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  height: 50px;
+  width: 100%; /* 幅を100%に設定して親要素に合わせる */
+}
+
+.login-btn {
+  width: 200px;
+  padding: 15px;
+  border: 1px solid white;
+  color: white;
+  background-color: #194d2f;
+  display: block;
+  margin: 15px auto 30px;
+}
+
+.error-alert {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5vh;
+}
+
+.error-messages {
+  margin: 10px 0; /* エラーメッセージの上下のマージン */
+  font-size: 14px; /* エラーメッセージのフォントサイズ */
+  text-align: center; /* エラーメッセージのテキストを中央寄せ */
+}
+
+.error-message{
+  color: red;
+}
+
