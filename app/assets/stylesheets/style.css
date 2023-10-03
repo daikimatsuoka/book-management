@@ -66,7 +66,6 @@ footer a{
 .user-container{
   display: flex;
   justify-content: center;
-  background-color: #f2f2f2;
 }
 
 .login-flash-message{
@@ -84,7 +83,6 @@ footer a{
 }
 
 .input-form {
-  background-color: #f2f2f2;
   border: 0;
   margin: 15px auto; /* 上下のマージンを調整して中央寄せ */
   padding: 15px;
@@ -120,3 +118,72 @@ footer a{
   color: red;
 }
 
+/* ## 新規登録ページ */
+.books-main{
+  text-align: center;
+}
+
+form {
+  width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.click-upload {
+  margin-bottom: 20px;
+}
+
+.click-upload p {
+  font-weight: bold;
+}
+
+.book-title,
+.book-author,
+.book-publisher,
+.category,
+.book-publisher {
+  margin-bottom: 15px;
+}
+
+.book-title p,
+.book-author p,
+.book-publisher p,
+.category p,
+.book-publisher p {
+  font-weight: bold;
+}
+
+.book-title input[type="text"],
+.book-author input[type="text"],
+.book-publisher input[type="text"],
+.category select{
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.book-publisher textarea {
+  width: 90%;
+  height: 150px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+form input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+  background-color: #0056b3;
+}
