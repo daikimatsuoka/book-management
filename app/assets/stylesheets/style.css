@@ -187,3 +187,118 @@ form input[type="submit"] {
 form input[type="submit"]:hover {
   background-color: #0056b3;
 }
+
+/*詳細ページ*/
+.show-contents{
+  display: flex;
+  padding-top: 100px;
+}
+
+.show-book-img{
+  height: 422px;
+  width: 299px;
+  padding-left: 300px;
+}
+
+.show-book-info{
+  padding-left: 100px;
+}
+
+.show-book-title{
+  font-weight: bold;
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+
+.show-book-category{
+  margin-bottom: 10px;
+}
+
+.public{
+  display: flex;
+  padding-bottom: 50px;
+}
+
+.show-book-author{
+  margin-right: 50px;
+}
+
+.show-book-explanation{
+  width: 500px;
+}
+
+.sub-title{
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.btn{
+  text-align: center;
+  padding-top: 100px;
+}
+
+.edit-btn,
+.delete-btn{
+  text-decoration: none;
+  padding: 20px 100px;
+  margin-right: 50px;
+}
+
+.edit-btn{
+  background-color: #007bff;
+  color: #fff;
+}
+
+.delete-btn{
+  background-color: darkgray;
+  color: black;
+}
+
+.show-container{
+  margin: 100px 200px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+
+.comment{
+  font-size: 20px;
+}
+
+.alert{
+  font-size: 15px;
+  color: red;
+}
+
+.review{
+  background-color: white;
+  margin: 20px 100px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.comment-text,
+.name,
+.date{
+  font-size: 14px;
+  font-family: "Yu Gothic";
+}
+
+.name{
+  text-align: right;
+}
+
+.comment-area{
+  width: 90%;
+  height: 150px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.show-submit-btn{
+  margin: auto;
+}
+
+.form-container {
+  text-align: center;
+}

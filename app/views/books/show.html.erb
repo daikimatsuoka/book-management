@@ -1,4 +1,3 @@
-<h1>詳細表示ページ</h1>
 <div class="show-contents">
   <%= image_tag @book.book_image, class: "show-book-img" %>
   <div class='show-book-info'>
@@ -6,41 +5,56 @@
       <%= @book.title %>
     </div>
     <div class='show-book-category'>
+      <span class="sub-title">ジャンル</span>
       <%= @book.category.name %>
     </div>
-    <div class='show-book-author'>
-      <%= @book.author %>
-    </div>
-    <div class='show-book-publisher'>
-      <%= @book.author %>
+    <div class="public">
+      <div class='show-book-author'>
+        <span class="sub-title">著者</span>
+        <%= @book.author %>
+      </div>
+      <div class='show-book-publisher'>
+        <span class="sub-title">出版社</span>
+        <%= @book.publisher %>
+      </div>
     </div>
     <div class='show-book-explanation'>
+    <span class="sub-title">概要・あらすじ</span><br>
       <%= @book.synopsis_explanation %>
     </div>
   </div>
+</div>
+<div class= "btn">
   <% if user_signed_in? && @book.user_id == current_user.id %>
     <%= link_to '編集する', edit_book_path(@book.id), class: "edit-btn" %>
     <%= link_to '削除する', book_path(@book.id), method: :delete, class: "delete-btn" %>
   <% end %>
-  <div class="container">
-    <h2 class="comment">コメント<h2>
-    <% if user_signed_in? %>
-      <%= form_with(model: [@book, @comment], local: true) do |f| %>
-        <%= f.text_area :comment, placeholder: "コメントする", rows: "2" %>
-        <%= f.submit "送信" %>
-      <% end %>
-      <% else%>
-        <strong><p>※ コメントの投稿にはログインが必要です </p></strong>
-    <% end %>
-  </div>
+</div>
+<div class="show-container">
+  <h2 class="comment">感想・コメント<h2>
   <div class="comments">
     <% @comments.each do |comment| %>
+    <div class="review">
+      <div class="comment-text">
+        <%= comment.comment %>
+      </div>
       <div class="name">
         <%= comment.user.nickname %>
-      </div>
-      <p class="comment-text">
-        <%= comment.comment %>
-      </p>
+      </div> 
+      <div class="date">
+        <%= comment.created_at.to_date %>
+      </div>  
+    </div>  
     <% end %>
   </div>
+  <% if user_signed_in? %>
+      <%= form_with(model: [@book, @comment], local: true) do |f| %>
+        <div class ="form-container">
+          <%= f.text_area :comment, placeholder: "コメントする", rows: "2",class:"comment-area" %><br>
+          <%= f.submit "送信" , class:"show-submit-btn" %>
+        </div>
+      <% end %>
+      <% else %>
+        <strong><p class="alert">※ コメントの投稿にはログインが必要です </p></strong>
+      <% end %>
 </div>
