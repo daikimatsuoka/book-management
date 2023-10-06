@@ -1,23 +1,37 @@
-<h1>一覧表示ページ</h1>
-<div class="contents">
-  <h2>・おすすめ書籍一覧</h2>
-  <% @books.each do |book| %>
-    <div class='book-img-content'>
-      <%= link_to book_path(book.id) do %>
-        <%= image_tag book.book_image, class: "book-img" %>
-      <% end %>
+<div class = "head-contents">
+  <div class="image-container">
+    <%= image_tag "publicdomainq-0022486mon.jpg", class:"head-image" %>
+    <div class="title-message">
+      <div class="main-message">Book Management</div>
+      <div class="sub-message">~ 本でつながるコミュニティ ~</div>
     </div>
-    <div class='book-info'>
-      <div class='book-title'>
-        <%= book.title %>
+  </div>
+</div>
+<div class= "main-contents">
+  <h1 class="announcement">投稿された書籍</h1>
+  <div class="contents">
+    <% @books.each do |book| %>
+      <div class="book">
+        <%= link_to book_path(book.id) do %>
+          <%= image_tag book.book_image, class: "book-img" %>
+        <% end %>
+        <div class='book-info'>
+          <div class='book-title'>
+            <%= book.title %>
+          </div>
+          <div class='book-category'>
+            <span class="sub-title">ジャンル</span>
+            <%= book.category.name %>
+          </div>
+          <div class='book-author'>
+            <span class="sub-title">著者</span>
+            <%= book.author %>
+          </div>
+        </div>
       </div>
-      <div class='book-category'>
-        <%= book.category.name %>
-      </div>
-      <div class='book-author'>
-        <%= book.author %>
-      </div>
-    </div>
-  <% end %>
-  <%= link_to "投稿する", new_book_path, class:"post" %>
+    <% end %>
+  </div>
+  <div class="btn-container">
+    <%= link_to "投稿する", new_book_path, class:"btn post-btn" %>
+  </div>
 </div>

@@ -4,7 +4,7 @@ class BooksController < ApplicationController
   before_action :move_to_index, only: [:edit, :destroy]
 
   def index
-    @books = Book.all
+    @books = Book.order("created_at DESC")
   end
 
   def new
