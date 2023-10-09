@@ -27,13 +27,11 @@
             <span class="sub-title">著者</span>
             <%= book.author %>
           </div>
+          <% if user_signed_in? %>
           <div id="like-btn<%= book.id %>">
-            <% if user_signed_in? && book.liked_by?(current_user)%>
-              <%=link_to "♥", book_likes_path(book.id),  method: :delete, class: "book-likes" %>
-            <% else %>
-              <%=link_to "♥", book_likes_path(book.id), method: :post, class: "book-likes" %>
-            <% end %>
+            <%= render partial: "likes/like", locals: { book: book } %>
           </div>
+          <% end %>
         </div>
       </div>
     <% end %>

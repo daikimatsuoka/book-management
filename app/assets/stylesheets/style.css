@@ -401,3 +401,8 @@ form input[type="submit"]:hover {
   text-decoration: none;
   color: black;
 }
+
+.book-likes-red{
+  text-decoration: none;
+  color: red;
+}
