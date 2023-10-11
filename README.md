@@ -11,6 +11,7 @@
 ### Association
 - has_many :books
 - has_many :comments
+- has_many :likes
 
 ## books テーブル
 
@@ -25,6 +26,7 @@
 
 ### Association
 - has_many :comments
+- has_many :likes
 - belongs_to :user
 
 ## comments テーブル
@@ -38,3 +40,13 @@
 ### Association
 - belongs_to :user
 - belongs_to :book
+
+## likes テーブル
+
+| Column                | Type       | Options           |
+| --------------------- | ---------- | ----------------- |
+| user                  | references | foreign_key: true |
+| item                  | references | foreign_key: true |
+
+- belongs_to: user
+- belongs_to: item

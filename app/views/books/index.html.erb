@@ -27,6 +27,11 @@
             <span class="sub-title">著者</span>
             <%= book.author %>
           </div>
+          <% if user_signed_in? %>
+          <div id="like-btn<%= book.id %>">
+            <%= render partial: "likes/like", locals: { book: book } %>
+          </div>
+          <% end %>
         </div>
       </div>
     <% end %>

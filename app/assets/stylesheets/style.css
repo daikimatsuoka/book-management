@@ -395,3 +395,14 @@ form input[type="submit"]:hover {
   text-decoration: none;
   border-radius: 5px;
 }
+
+/*一覧表示ページ*/
+.book-likes{
+  text-decoration: none;
+  color: black;
+}
+
+.book-likes-red{
+  text-decoration: none;
+  color: red;
+}
