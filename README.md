@@ -25,6 +25,22 @@ Basec認証のパスワード 2222
 # 洗い出した要件
 https://docs.google.com/spreadsheets/d/10zGk7QVz21FFjy_psz1qF_lnEFtHTG1k9V3poTiLLU4/edit?usp=drive_link
 
+# 実装した機能についての画像やGIFおよびその説明
+[![Image from Gyazo](https://i.gyazo.com/5332695c2b5c2b61ace05deb65758be5.gif)](https://gyazo.com/5332695c2b5c2b61ace05deb65758be5)
+ジャンルは選択可能
+
+[![Image from Gyazo](https://i.gyazo.com/21327c2c980fa38431360bc0f0abaebd.gif)](https://gyazo.com/21327c2c980fa38431360bc0f0abaebd)
+すべての情報を入力すれば投稿できる
+
+[![Image from Gyazo](https://i.gyazo.com/e2bfadf50de9af390a6cac13428b04bc.gif)](https://gyazo.com/e2bfadf50de9af390a6cac13428b04bc)
+詳細表示ベージのビュー
+
+[![Image from Gyazo](https://i.gyazo.com/ffdc6ce95a221edb04a6a1d95e009306.gif)](https://gyazo.com/ffdc6ce95a221edb04a6a1d95e009306)
+コメントが可能
+
+[![Image from Gyazo](https://i.gyazo.com/2af9bb78508b4c96383c4f70928b153c.gif)](https://gyazo.com/2af9bb78508b4c96383c4f70928b153c)
+いいねが可能
+
 # 実装予定の機能
 カテゴリー検索機能
 
@@ -47,6 +63,10 @@ git clone https://github.com/daikimatsuoka/book-management.git<br>
 cd book-management/<br>
 bundle install <br>
 yarn install<br>
+
+# 工夫したポイント
+人の目に触れられるようなビューを意識してレイアウトの作成に取り組みました。<br>これまで、デザインについてはあまり詳しく学んでおらず、どこまでこだわれば良いのか、時間をかければ良いのか非常に悩みました。<br>そこで使う期日を最大2週間と決め、その中で派手ではないが誰が見ても違和感がないデザインを目指そうと決めました。<br>例えば本の画像サイズの調整、一覧表示、詳細表示画面の表示の調整は特に人の目に入りやすいため、高さ、幅、余白等を複数回調整して違和感のないページに仕上げました。
+
 # テーブル設計
 
 ## users テーブル
