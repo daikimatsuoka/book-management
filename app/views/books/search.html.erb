@@ -1,18 +1,9 @@
-<div class = "head-contents">
-  <div class="image-container">
-    <%= image_tag "publicdomainq-0022486mon.jpg", class:"head-image" %>
-    <div class="title-message">
-      <div class="main-message">Book Management</div>
-      <div class="sub-message">~ 本でつながるコミュニティ ~</div>
-    </div>
-  </div>
-</div>
 <div class= "main-contents">
-  <h1 class="announcement">投稿された書籍</h1>
   <%= form_with(url: search_books_path, local: true, method: :get, class: "search-form") do |form| %>
     <%= form.text_field :keyword, placeholder: "検索する", class: "search-input" %>
     <%= form.submit "検索", class: "search-btn" %>
   <% end %>
+  <h1 class="announcement">検索結果</h1>
   <div class="contents">
     <% @books.each do |book| %>
       <div class="book">
@@ -39,8 +30,5 @@
         </div>
       </div>
     <% end %>
-  </div>
-  <div class="btn-container">
-    <%= link_to "投稿する", new_book_path, class:"btn post-btn" %>
   </div>
 </div>
