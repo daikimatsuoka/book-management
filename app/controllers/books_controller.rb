@@ -44,6 +44,11 @@ class BooksController < ApplicationController
     end
   end
 
+  def search
+    @q = Book.ransack(params[:q])
+    @books = @q.result
+  end
+
   private
   def book_params
     params.require(:book).permit(:title ,:author ,:publisher ,:category_id, :synopsis_explanation, :book_image).merge(user_id: current_user.id)
