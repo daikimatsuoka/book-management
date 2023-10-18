@@ -45,8 +45,7 @@ class BooksController < ApplicationController
   end
 
   def search
-    @q = Book.ransack(params[:q])
-    @books = @q.result
+    @books = Book.search(params[:keyword])
   end
 
   private

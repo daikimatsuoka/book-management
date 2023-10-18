@@ -1,0 +1,34 @@
+<div class= "main-contents">
+  <%= form_with(url: search_books_path, local: true, method: :get, class: "search-form") do |form| %>
+    <%= form.text_field :keyword, placeholder: "検索する", class: "search-input" %>
+    <%= form.submit "検索", class: "search-btn" %>
+  <% end %>
+  <h1 class="announcement">検索結果</h1>
+  <div class="contents">
+    <% @books.each do |book| %>
+      <div class="book">
+        <%= link_to book_path(book.id) do %>
+          <%= image_tag book.book_image, class: "book-img" %>
+        <% end %>
+        <div class='book-info'>
+          <div class='book-title'>
+            <%= book.title %>
+          </div>
+          <div class='book-category'>
+            <span class="sub-title">ジャンル</span>
+            <%= book.category.name %>
+          </div>
+          <div class='book-author'>
+            <span class="sub-title">著者</span>
+            <%= book.author %>
+          </div>
+          <% if user_signed_in? %>
+          <div id="like-btn<%= book.id %>">
+            <%= render partial: "likes/like", locals: { book: book } %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
