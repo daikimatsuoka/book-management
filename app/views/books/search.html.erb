@@ -1,17 +1,17 @@
 <div class= "main-contents">
-  <%= search_form_for @q, url: search_books_path, html: {id: "detailed-search-form"} do |form| %>
-    <h2>更に詳しく検索する</h2>
+  <%= search_form_for @q, url: search_books_path, html: {id: "detailed-search-form"},class:'detailed-search-form' do |form| %>
+    <h2 class="search-announcement">更に詳しく検索する</h2>
     <div class="search-field">
-      <%= form.label :title_eq, 'タイトルで検索する' %>
+      <%= form.label :title_eq, 'タイトルで検索する', class: "search-title" %>
       <br>
-      <%= form.text_field :title_eq, placeholder: 'タイトル', class: 'search-input' %>
+      <%= form.text_field :title_eq, placeholder: 'タイトル', class: "search-input" %>
     </div>
     <div class="search-field">
-      <%= form.label :category_id_eq, 'ジャンルで検索する' %>
+      <%= form.label :category_id_eq, 'ジャンルで検索する', class: "search-title" %>
       <br>
-      <%= form.collection_select(:category_id_eq, Category.all, :id, :name, {include_blank: "---"}, class: 'search-input' ) %>
+      <%= form.collection_select(:category_id_eq, Category.all, :id, :name, {include_blank: "---"}, class: "search-input" ) %>
     </div>
-    <%= form.submit "検索", class: "search-btn" %>
+    <%= form.submit "検索" %>
   <% end %>
   <h1 class="announcement">検索結果</h1>
   <div class="contents">
