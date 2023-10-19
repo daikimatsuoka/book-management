@@ -1,6 +1,11 @@
 <div class= "main-contents">
-  <%= form_with(url: search_books_path, local: true, method: :get, class: "search-form") do |form| %>
-    <%= form.text_field :keyword, placeholder: "検索する", class: "search-input" %>
+  <%= search_form_for @q, url: search_books_path, html: {id: "detailed-search-form"} do |form| %>
+    <h2>更に詳しく検索する</h2>
+    <div class="search-field">
+      <%= form.label :title_cont, 'タイトルで検索する' %>
+      <br>
+      <%= form.text_field :title_cont, placeholder: 'タイトル', class: 'search-input' %>
+    </div>
     <%= form.submit "検索", class: "search-btn" %>
   <% end %>
   <h1 class="announcement">検索結果</h1>
