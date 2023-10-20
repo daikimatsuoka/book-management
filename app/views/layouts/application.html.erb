@@ -16,7 +16,7 @@
         <h1 class="title"><a href="/">Book Management</a></h1>
         <% if user_signed_in? %>
           <div class="login">
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "left-btn"%>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "left-btn" %>
             <%= link_to current_user.nickname, root_path, class: "right-btn" %>
           </div>
         <% else %>
